@@ -1,20 +1,26 @@
-let slideIndex = 1;
-
-function plusSlides(n){
-    slideIndex += n;
-    if (slideIndex < 1) slideIndex = 4;
-    if (slideIndex > 4) slideIndex = 1;
-    showSlide (slideIndex);
+let slideIndex = {
+    "reviews-container": {
+        "value":1,
+        "max":4
+    },
+    "team-container":{
+        "value":1,
+        "max":3
+    }
 }
 
-function showSlide(slideIndex){
-    const slides = document.getElementsByClassName("slideshow-slide");
+function plusSlides(elem, n){
+    const containerId = elem.dataset.containerid;
+    slideIndex[containerId].value += n;  
+    if (slideIndex[containerId].value < 1) slideIndex[containerId].value = slideIndex[containerId].max;
+    if (slideIndex[containerId].value > slideIndex[containerId].max) slideIndex[containerId].value = 1;
+    showSlide (containerId, slideIndex[containerId].value);
+}
+function showSlide(containerId, slideIndex){
+    const container = document.getElementById(containerId);
+    const slides = container.getElementsByClassName("slideshow-slide");
     for (let slide of slides)
-        slide.style.display = "none";
-    const targetSlide = document.getElementById("slideshow-slide-" + slideIndex);
-    targetSlide.style.display = "block";
+        slide.classList.remove("slideshow-active");
+    const targetSlide = document.getElementById(containerId+"-"+"slideshow-slide-" + slideIndex);
+    targetSlide.classList.add("slideshow-active");
 }
-
-document.addEventListener('DOMContentLoaded', (e) =>{
-    showSlide (slideIndex);
-});

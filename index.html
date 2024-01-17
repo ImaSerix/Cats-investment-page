@@ -14,15 +14,31 @@
 
 <body>
   <header class = "grid">
-    <section id = "top" class = "fixed w-100">
-      <nav id = "top-nav" class = "flex-box items-centre content-space-between margin-centre">
-        <div class = "logo float-left"></div>
-        <ul class = "navigation grid float-right font-size-20">
-          <li class = "navigation-item"><a href="#">Home</a></li>
-          <li class = "navigation-item"><a href="#">About</a></li>
-          <li class = "navigation-item"><a href="#">Review</a>s</li>
-          <li class = "navigation-item"><a href="#">Calculator</a></li>
-          <li class = "navigation-item"><a href="#">Contacts</a></li>
+    <section id = "top" class = "fixed">
+      <nav id = "top-nav" class = "">
+        <div class = "logo"></div>
+        <a onclick="openMenu()"><img src="img/menu.png" id="navigation-menu-button" alt="menu"></a>
+        <ul id = "navigation" class = "grid">
+          <li class = "navigation-item">
+            <a href="#">Home</a>
+          </li>
+          <li class = "navigation-item has-dropdown">
+            <a href="#">About</a><button onclick="openDropdown(this)" class = "dropdown-button">&#9013;</button>
+            <ul class = "dropdown">
+              <li class = "dropdown-item"><a href="#">Team</a></li>
+              <li class = "dropdown-item"><a href="#">History</a></li>
+              <li class = "dropdown-item"><a href="#">Location</a></li>
+            </ul>
+          </li>
+          <li class = "navigation-item">
+            <a href="#">Review</a>
+          </li>
+          <li class = "navigation-item">
+            <a href="#">Calculator</a>
+          </li>
+          <li class = "navigation-item">
+            <a href="#">Contacts</a>
+          </li>
         </ul>
       </nav>
       <div class="progress-container">
@@ -31,16 +47,14 @@
     </section>
     <section id = "banner">
       <div class = "bg-container"></div>
-      <div class = "flex-box content-end items-centre border-box pad-20 w-100 h-100 frame">
-        <div class = "banner-text framed text-right">
-          <h2 class = "font-size-40 text-uppercase">Best choice</h2>
-          <p class = "font-size-30">Start invests with us → <button class = "button inline font-size-30" id = "banner-button">Join</button></p>
-        </div>
+      <div class = "banner-text framed text-right w-100 h-100">
+        <h2 class = "font-size-40 text-uppercase">Best choice</h2>
+        <p class = "font-size-30">Start invests with us → <button class = "button inline font-size-30" id = "banner-button">Join</button></p>
       </div>
     </section>
   </header>
   <main>
-    <section class = "" id = "about">
+    <section id = "about">
       <div class = "section-container pad-20 w-100 h-100">
         <nav id = "about-nav" class = "grid">
           <div class = "inline-block about-nav-title font-size-20">About</div>
@@ -49,23 +63,31 @@
           <button onclick = "tabChanger(this,'Location')" class = "inline-block about-nav-option font-size-20">Location</button>
           <span class = "about-nav-fill"></span>
         </nav>
-        <div id = "Team" class = "about w-100 h-100 active">
-          <div class = "flex-box content-space-between">
-            <div class = "member frame pad-20" id = "ceo">
+        <div id = "Team" class = "slideshow about w-100 h-100 active">
+          <div id = "team-container">
+            <div id = "team-container-slideshow-slide-1" class = "slideshow-slide slideshow-active member frame pad-20" id = "ceo">
               <img class = "member-photo">
-              <h3 class = "member-name">Name Surname</h3>
-              <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+              <div class = "member-info">
+                <h3 class = "member-name">Name Surname 1</h3>
+                <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+              </div>
             </div>
-            <div class = "member frame pad-20" id = "helper">
+            <div id = "team-container-slideshow-slide-2" class = "slideshow-slide member frame pad-20" id = "helper">
               <img class = "member-photo">
-              <h3 class = "member-name">Name Surname</h3>
-              <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+              <div class = "member-info">
+                <h3 class = "member-name">Name Surname 2</h3>
+                <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+              </div>
             </div>
-            <div class = "member frame pad-20" id = "developer">
+            <div id = "team-container-slideshow-slide-3" class = "slideshow-slide member frame pad-20" id = "developer">
               <img class = "member-photo">
-              <h3 class = "member-name">Name Surname</h3>
-              <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+              <div class = "member-info">
+                <h3 class = "member-name">Name Surname 3</h3>
+                <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+              </div>
             </div>
+            <a class="slideshow-button-prev" data-containerid = "team-container" onclick="plusSlides(this, -1)">&#10094;</a>
+            <a class="slideshow-button-next" data-containerid = "team-container" onclick="plusSlides(this, 1)">&#10095;</a>
           </div>
         </div>
         <div id = "History" class = "about w-100 h-100">
@@ -85,35 +107,35 @@
       </div>
     </section>
     <section id = "reviews">
-      <div class = "pad-10 font-size-30">Reviews</div>
+      <div class = "section-header pad-10 font-size-30">Reviews</div>
       <div class = "flex-box slideshow-container section-container pad-20 w-100 h-100" id = "reviews-container">
-        <div id = "slideshow-slide-1" class = "slideshow-slide frame pad-20">
+        <div id = "reviews-container-slideshow-slide-1" class = "slideshow-slide slideshow-active review frame pad-20">
           <img class = "review-photo">
           <h3 class = "review-name">Name Surname 1</h3>
           <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <div id = "slideshow-slide-2" class = "slideshow-slide frame pad-20">
+        <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review frame pad-20">
           <img class = "review-photo">
           <h3 class = "review-name">Name Surname 2</h3>
           <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <div id = "slideshow-slide-3" class = "slideshow-slide frame pad-20">
+        <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review frame pad-20">
           <img class = "review-photo">
           <h3 class = "review-name">Name Surname 3</h3>
           <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <div id = "slideshow-slide-4" class = "slideshow-slide frame pad-20">
+        <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review frame pad-20">
           <img class = "review-photo">
           <h3 class = "review-name">Name Surname 4</h3>
           <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <a class="slideshow-button-prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="slideshow-button-next" onclick="plusSlides(1)">&#10095;</a>
+        <a class="slideshow-button-prev" data-containerid = "reviews-container" onclick="plusSlides(this, -1)">&#10094;</a>
+        <a class="slideshow-button-next" data-containerid = "reviews-container" onclick="plusSlides(this, 1)">&#10095;</a>
         <script src="slideshow.js"></script>
       </div>
     </section>
     <section id = "calculator">
-      <div class = "pad-10 font-size-30">Calculator</div>
+      <div class = "section-header pad-10 font-size-30">Calculator</div>
       <div class = "flex-box section-container pad-20 w-100 content-space-between" id = "calculator-container">
         <div class = "font-size-20 flex-box text-centre" id="calculator-options">
           <p>
@@ -155,7 +177,7 @@
       </div>
     </section>
     <section id="contacts">
-      <div class = "pad-10 font-size-30">Contacts</div>
+      <div class = "section-header pad-10 font-size-30">Contacts</div>
       <div class = "section-container pad-20 w-100 h-100 text-centre">
         <div class = "flex-box content-space-around pad-20">
           <div>

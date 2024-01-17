@@ -26,6 +26,27 @@
 .pos-static{position: static;}
 .section-container{box-sizing: border-box;}
 .text-indent-30{text-indent: 30px;}
+.section-header{
+  border-bottom: solid black 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/*Slideshow Buttons*/
+.slideshow-button-prev, .slideshow-button-next {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 100;
+}
+
+
 /*Standart elem modification*/
 h2{margin:0;}
 p{margin:10px 0;}
@@ -48,9 +69,14 @@ header{
   top: 0;
   right: 0;
   left: 0;
+  z-index: 100;
 }
+
 #top-nav{
   background: lightblue;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
   justify-content: space-between;
   padding: 10px 20px 10px 20px;
 }
@@ -59,16 +85,110 @@ header{
   width: 100px;
   height: 100px;
 }
-.navigation{
+#navigation{
   grid-auto-flow: column;
 }
 .navigation-item{
   padding-left: 10px;
   padding-right: 10px;
 }
+.navigation-item a{
+  text-decoration: none;
+  color:black;
+}
 .navigation-item:nth-child(even){
   border-left: black 1px solid;
   border-right: black 1px solid;
+}
+.navigation-image{
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+#navigation-menu-button{
+  display: none;
+  height: 50px;
+}
+.dropdown{
+  display: none;
+}
+.navigation-item.has-dropdown:hover > .dropdown{
+  display: block;
+}
+.dropdown{
+  display: none;
+  position: fixed;
+  background: white;
+  text-align: end;
+}
+.dropdown-button{
+  display: none;
+  background: none;
+  border: 0;
+}
+
+@media screen and (max-width:600px) {
+  #top{
+    display: block;
+    min-height: 60px;
+  }
+  header{
+    height: 70vh;
+    grid-template-rows: 60px auto; 
+  }
+  .navigation-item a{
+    color:gray;
+  }
+  #top-nav{
+    font-size: 15px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+  }
+  .logo{
+    display: none;
+  }
+  .navigation-item{
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding:5px;
+  }
+  .navigation-item:nth-child(even){
+    border-right: none;
+    border-left: none;
+  }
+  .navigation-item{
+    border-bottom: solid black 1px;
+    text-align: end;
+  }
+  #navigation{
+    display: none;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #navigation-menu-button{
+    display: block;
+  }
+  .navigation-item.has-dropdown:hover > .dropdown{
+    display: block;
+  }
+  .dropdown{
+    display: none;
+    position: static;
+    background: none;
+    text-align: end;
+    padding: 0;
+  }
+  .dropdown > * {
+    padding: 3px;
+  }
+  .dropdown-button{
+    display: inline-block;
+  }
 }
 /*Top---*/
 
@@ -76,8 +196,8 @@ header{
 #banner {
   grid-row: 2;
   background-color: blue;
-  padding: 100px;
   box-sizing: border-box;
+  position: relative;
 }
 #banner-button{
   padding:10px 15px 10px 15px;
@@ -87,6 +207,14 @@ header{
 }
 .button {
   border-radius: 50%;
+}
+.banner-text{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  padding: 10px;
 }
 /*Banner---*/
 /*Header-----*/
@@ -135,16 +263,70 @@ header{
   display: block;
 }
 /*---Team---*/
+#team-container{
+  display: flex;
+  justify-content: space-between;
+}
 .member{
   text-align: center;
   flex-basis: 200px;
   min-width: 150px;
   margin: 10px;
+  .slideshow-button-prev, .slideshow-button-next{
+    display: none;
+  }
 }
 .member-photo{
   background-color: blue;
   height: 150px;
   width: 150px;
+}
+@media screen and (max-width: 650px){
+  #Team{
+    #team-container{
+      position: relative;
+      display: block;
+    }
+    #team-container > *{
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .member{
+      position: relative;
+      padding: 0;
+      border: 0;
+    }
+    .member-info{
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    .member-photo{
+      background-color: blue;
+      width: 100%;
+      height: 250px;
+    }
+    .slideshow-button-prev, .slideshow-button-next{
+      display: block;
+    }
+    .slideshow-slide{
+      display: none;
+      width: 100%;
+    }
+    .slideshow-active{
+      display: block;
+    }
+    .slideshow-button-prev{
+      top: 50%;
+      left:0
+    }
+    .slideshow-button-next{
+      top: 50%;
+      right: 0;
+    }
+  }
 }
 /*Team---*/
 /*---History---*/
@@ -172,53 +354,73 @@ header{
   background-color: lightblue;
   max-width: 1200px;
   max-height: 700px;
-}
-#reviews-container{
-  justify-content: space-around;
-}
-.review{
-  text-align: center;
-  flex-basis: 200px;
-  min-width: 150px;
-  margin: 10px;
-}
-.review-photo{
-  background-color: blue;
-  height: 150px;
-  width: 150px;
-  margin: 10px;
+  .slideshow-button-prev, .slideshow-button-next{
+    display: none;
+  }
 }
 
+@media screen and (min-width: 950px){
+  #reviews-container{
+    justify-content: space-around;
+  }
+  .review{
+    text-align: center;
+    flex-basis: 200px;
+    min-width: 150px;
+    margin: 10px;
+  }
+  .review-photo{
+    background-color: blue;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+  } 
+}
+@media screen and (min-width: 650px) and (max-width: 950px){
+  .review-photo{
+    display: none;
+  }
+  #reviews-container{
+    flex-direction: column;
+  }
+  .review{
+    padding: 10px;
+    border:0;
+  }
+  
+}
 /*---Slideshow---*/
-.review-photo{
-  float:left;
-}
-.slideshow-container{
-  position: relative;
-}
-.slideshow-slide{
+.slideshow-button-prev, .slideshow-button-next{
   display: none;
-  width: 100%;
 }
-.slideshow-button-prev, .slideshow-button-next {
-  cursor: pointer;
-  position: absolute;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-.slideshow-button-prev{
-  top: 50%;
-  left:0
-}
-.slideshow-button-next{
-  top: 50%;
-  right: 0;
+
+@media screen and (max-width: 650px){
+  #reviews{
+    .review-photo{
+      float:left;
+    }
+    .slideshow-button-prev, .slideshow-button-next{
+      display: block;
+    }
+    .slideshow-container{
+      position: relative;
+    }
+    .slideshow-slide{
+      display: none;
+      width: 100%;
+    }
+    .slideshow-active{
+      display: block;
+    }
+    .slideshow-button-prev{
+      top: 50%;
+      left:0
+    }
+    .slideshow-button-next{
+      top: 50%;
+      right: 0;
+    }
+  }
 }
 /*Slideshow---*/
 /*Reviews------*/
