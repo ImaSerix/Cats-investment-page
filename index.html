@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="lv">
+
+<head>
+  <meta charset="utf-8">
+  <meta name = "keywords" content="..."> <!-- Need to add some text here-->
+  <meta name = "description" content="..."> <!-- Some text here-->
+  <title>Some title</title>
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <header class = "grid">
+    <section id = "top" class = "fixed w-100">
+      <nav id = "top-nav" class = "flex-box items-centre content-space-between margin-centre">
+        <div class = "logo float-left"></div>
+        <ul class = "navigation grid float-right font-size-20">
+          <li class = "navigation-item"><a href="#">Home</a></li>
+          <li class = "navigation-item"><a href="#">About</a></li>
+          <li class = "navigation-item"><a href="#">Review</a>s</li>
+          <li class = "navigation-item"><a href="#">Calculator</a></li>
+          <li class = "navigation-item"><a href="#">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+    </section>
+    <section id = "banner">
+      <div class = "bg-container"></div>
+      <div class = "flex-box content-end items-centre border-box pad-20 w-100 h-100 frame">
+        <div class = "banner-text framed text-right">
+          <h2 class = "font-size-40 text-uppercase">Best choice</h2>
+          <p class = "font-size-30">Start invests with us → <button class = "button inline font-size-30" id = "banner-button">Join</button></p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section class = "" id = "about">
+      <div class = "section-container pad-20 w-100 h-100">
+        <nav id = "about-nav" class = "grid">
+          <div class = "inline-block about-nav-title font-size-20">About</div>
+          <button onclick = "tabChanger(this,'Team')" class = "inline-block about-nav-option font-size-20 active">Team</button>
+          <button onclick = "tabChanger(this,'History')" class = "inline-block about-nav-option font-size-20">History</button>
+          <button onclick = "tabChanger(this,'Location')" class = "inline-block about-nav-option font-size-20">Location</button>
+          <span class = "about-nav-fill"></span>
+        </nav>
+        <div id = "Team" class = "about w-100 h-100 active">
+          <div class = "flex-box content-space-between">
+            <div class = "member frame pad-20" id = "ceo">
+              <img class = "member-photo">
+              <h3 class = "member-name">Name Surname</h3>
+              <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+            </div>
+            <div class = "member frame pad-20" id = "helper">
+              <img class = "member-photo">
+              <h3 class = "member-name">Name Surname</h3>
+              <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+            </div>
+            <div class = "member frame pad-20" id = "developer">
+              <img class = "member-photo">
+              <h3 class = "member-name">Name Surname</h3>
+              <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+            </div>
+          </div>
+        </div>
+        <div id = "History" class = "about w-100 h-100">
+          <div class = "pad-20">
+            <img id = "History-img">
+            <p class = "font-size-20 text-indent-30 text-justify">In 2020, visionary entrepreneur <a href="#">Elias Vanderburg</a> founded "Financial Horizon" to revolutionize investments. Blending advanced technology with a savvy approach, the company quickly became a trailblazer. By employing artificial intelligence for market analysis, it offered clients next-gen investment opportunities. Today, "Financial Horizon" stands as a symbol of innovation, setting new standards in the dynamic world of finance.</p>
+            <p class = "font-size-20 text-indent-30 text-justify">"Financial Horizon" swiftly became a pivotal player in the financial realm, introducing a spectrum of investment products, from tailored portfolio management to ventures into the realm of cryptocurrencies. Renowned for its individualized client approach and commitment to cutting-edge technologies, the company emerged as a beacon of trust and innovation. Continually shaping the financial landscape, "Financial Horizon" inspires others with its dynamic and successful trajectory in the ever-evolving world of finance.</p>
+          </div>
+        </div>
+        <div id = "Location" class = "about w-100 h-100">
+          <div class = "pad-20">
+            <img src="img/building.png" id = "Location-img">
+            <p class = "font-size-20 text-indent-30 text-justify">Expanding its footprint across major financial hubs, "Financial Horizon" strategically established its flagship branch in the heart of Manhattan, New York. Nestled amidst the skyscrapers of Wall Street, the company's iconic office symbolizes its influence in the global financial landscape. With plans for additional branches in key cities like London and Singapore, "Financial Horizon" aims to bring its innovative approach to investment to clients around the world.</p>
+            <p class = "font-size-20 text-indent-30 text-justify">The eco-friendly building, draped in lush greenery, embodies the company's commitment to environmental responsibility. With a focus on paperless transactions, recycling, and carbon offset programs, "Financial Horizon" champions a green agenda. This dedication not only shapes a greener future but also encourages clients and industry peers to adopt eco-conscious practices in the financial realm. "Financial Horizon" strives to be a catalyst for positive change, blending financial expertise with a deep commitment to a sustainable future.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id = "reviews">
+      <div class = "pad-10 font-size-30">Reviews</div>
+      <div class = "flex-box slideshow-container section-container pad-20 w-100 h-100" id = "reviews-container">
+        <div id = "slideshow-slide-1" class = "slideshow-slide frame pad-20">
+          <img class = "review-photo">
+          <h3 class = "review-name">Name Surname 1</h3>
+          <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        </div>
+        <div id = "slideshow-slide-2" class = "slideshow-slide frame pad-20">
+          <img class = "review-photo">
+          <h3 class = "review-name">Name Surname 2</h3>
+          <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        </div>
+        <div id = "slideshow-slide-3" class = "slideshow-slide frame pad-20">
+          <img class = "review-photo">
+          <h3 class = "review-name">Name Surname 3</h3>
+          <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        </div>
+        <div id = "slideshow-slide-4" class = "slideshow-slide frame pad-20">
+          <img class = "review-photo">
+          <h3 class = "review-name">Name Surname 4</h3>
+          <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        </div>
+        <a class="slideshow-button-prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="slideshow-button-next" onclick="plusSlides(1)">&#10095;</a>
+        <script src="slideshow.js"></script>
+      </div>
+    </section>
+    <section id = "calculator">
+      <div class = "pad-10 font-size-30">Calculator</div>
+      <div class = "flex-box section-container pad-20 w-100 content-space-between" id = "calculator-container">
+        <div class = "font-size-20 flex-box text-centre" id="calculator-options">
+          <p>
+            <label for="invest-count">Investment in each period</label>
+            <input type="number" value = 100 min = 0 max = 100000 id = "invest-count">
+          </p>
+          <p>
+            <label for="invest-periodicity">Invest periodicity </label>
+            <select id = "invest-periodicity">
+              <option value="52">Weekly</option>
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="1">Yearly</option>
+            </select>
+          </p>
+          <p>
+            <label for="invest-period">invest period</label>
+            <input type="range" value = 30 min = 1 max = 60 id = "invest-period" oninput="rangeValue.value = this.value"> <!-- В идеале сделать херню, которая будет плавать над шариком, но маловероятно, что сделаешь ЛОЛ-->
+            <output id = "rangeValue">30</output><span>yr</span>
+          </p>
+          <p>
+            <label for="invest-initial">An initial fee</label>
+            <input type="number" value = 200 min = 0 max = 1000000 id = "invest-initial">
+          </p>
+          <p>
+            <label for="invest-policy">Investment policy</label>
+            <select type="" id = "invest-policy">
+              <option value="0.05">Calm 5%/per year</option>
+              <option value="0.10">Middle 10%/per year</option>
+              <option value="0.15">Agressive 15%/per year</option>
+            </select>
+          </p>
+          <button id = "calculator-options-button">Calculate</button>
+        </div>
+        <div id = "calculator-graph-container">
+          <canvas id = "calculator-graph" style="height: 125px; width: 200px;"></canvas>
+        </div>
+        <script src="graph.js"></script>
+      </div>
+    </section>
+    <section id="contacts">
+      <div class = "pad-10 font-size-30">Contacts</div>
+      <div class = "section-container pad-20 w-100 h-100 text-centre">
+        <div class = "flex-box content-space-around pad-20">
+          <div>
+            <p class = "soc-network">Our Instagramm</p><img class = "soc-network-logo" id="instagramm">
+          </div>
+          <div>
+            <p class = "soc-network">Our Facebook</p><img class = "soc-network-logo" id="facebook">
+          </div>
+          <div>
+            <p class = "soc-network">Our youtube</p><img class = "soc-network-logo" id="youtube">
+          </div>
+        </div>
+        <button id="contacts-button">Join us</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="section-container text-centre pad-20">
+      <p>Made by me for me</p>
+      <p>Not really copyright</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,293 @@
+/*Overall classes*/
+.font-size-20{font-size: 20px;}
+.font-size-30{font-size: 30px;}
+.font-size-40{font-size: 40px;}
+.inline{display: inline ;}
+.inline-block{display: inline-block;}
+.text-uppercase{text-transform: uppercase;}
+.text-centre{text-align: center;}
+.text-justify{text-align: justify;}
+.text-right{text-align: right;}
+.border-box{box-sizing: border-box;}
+.pad-10{padding: 10px;}
+.pad-20{padding: 20px;}
+.fixed{position: fixed;}
+.flex-box{display: flex;}
+.grid{display: grid;}
+.items-centre{align-items: center;}
+.content-end{justify-content: end;}
+.content-space-around{justify-content: space-around;}
+.content-space-between{justify-content: space-between;}
+.margin-centre{margin: auto auto;}
+.frame{border: black 1px solid;}
+.w-100{width: 100%;}
+.h-100{height: 100%;}
+.pos-absolute{position: absolute;}
+.pos-static{position: static;}
+.section-container{box-sizing: border-box;}
+.text-indent-30{text-indent: 30px;}
+/*Standart elem modification*/
+h2{margin:0;}
+p{margin:10px 0;}
+ul{list-style: none;padding: 10px;}
+input{width: 100px;}
+section:not(section#banner, section#top){
+  margin: 20px auto;
+}
+
+/*-----Header section-----*/
+header{
+  height: 100vh;
+  grid-template-rows: 120px auto;
+  grid-template-columns: 1fr;
+}
+/*---Top section + navbar---*/
+#top{
+  background: lightblue;
+  min-height: 120px;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+#top-nav{
+  background: lightblue;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+}
+.logo {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+.navigation{
+  grid-auto-flow: column;
+}
+.navigation-item{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.navigation-item:nth-child(even){
+  border-left: black 1px solid;
+  border-right: black 1px solid;
+}
+/*Top---*/
+
+/*---Banner section---*/
+#banner {
+  grid-row: 2;
+  background-color: blue;
+  padding: 100px;
+  box-sizing: border-box;
+}
+#banner-button{
+  padding:10px 15px 10px 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: aqua;
+}
+.button {
+  border-radius: 50%;
+}
+/*Banner---*/
+/*Header-----*/
+
+/*-----About section-----*/
+#about {
+  background-color: lightblue;
+  max-width: 1200px;
+}
+.about{
+  display: none;
+}
+.about-nav-option{
+  border: 0;
+  border-bottom: black 1px solid;;
+  padding: 5px;
+  background-color: lightblue;
+}
+.about-nav-option:not(.active):hover{
+  background-color: aquamarine;
+}
+.about-nav-option.active{
+  border: black 1px solid;
+  border-bottom: 0;
+}
+.about-nav-title{
+  padding: 5px;
+  padding-left: 0px;
+  border-bottom: black 1px solid;
+  font-weight: bold;
+}
+.about-nav-fill{
+  padding: 5px;
+  padding-right: 0px;
+  border-bottom: black 1px solid;
+}
+#about-nav{
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, max-content) 1fr;
+  margin-bottom: 10px;
+}
+.about{
+  display: none;
+}
+.about.active{
+  display: block;
+}
+/*---Team---*/
+.member{
+  text-align: center;
+  flex-basis: 200px;
+  min-width: 150px;
+  margin: 10px;
+}
+.member-photo{
+  background-color: blue;
+  height: 150px;
+  width: 150px;
+}
+/*Team---*/
+/*---History---*/
+#History-img{
+  margin: 10px;
+  float: right;
+  background-color: blue;
+  height: 250px;
+  width: 200px;
+}
+/*History---*/
+/*---Location---*/
+#Location-img{
+  margin: 10px;
+  float: right;
+  background-color: blue;
+  height: 300px;
+  width: 250px;
+}
+/*Location---*/
+/*About------*/
+
+/*-----Reviews------*/
+#reviews{
+  background-color: lightblue;
+  max-width: 1200px;
+  max-height: 700px;
+}
+#reviews-container{
+  justify-content: space-around;
+}
+.review{
+  text-align: center;
+  flex-basis: 200px;
+  min-width: 150px;
+  margin: 10px;
+}
+.review-photo{
+  background-color: blue;
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+}
+
+/*---Slideshow---*/
+.review-photo{
+  float:left;
+}
+.slideshow-container{
+  position: relative;
+}
+.slideshow-slide{
+  display: none;
+  width: 100%;
+}
+.slideshow-button-prev, .slideshow-button-next {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.slideshow-button-prev{
+  top: 50%;
+  left:0
+}
+.slideshow-button-next{
+  top: 50%;
+  right: 0;
+}
+/*Slideshow---*/
+/*Reviews------*/
+
+/*-----Calculator------*/
+#calculator {
+  background-color: lightblue;
+  max-width: 1200px;
+  max-height: 650px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+#calculator-options{
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  min-width: 215px;
+}
+#calculator-options-button{
+  width: 100px;
+  height: 30px;
+  margin: 5px auto;
+}
+@media screen and (max-width: 650px){
+  #calculator-container{
+    flex-direction: column;
+  }
+}
+#calculator-graph-container{
+  flex-grow: 2;
+  flex-shrink: 0;
+  min-height: 200px;
+  aspect-ratio: 2/1;
+}
+/*Calculator------*/
+
+/*-----Contacts-----*/
+#contacts{
+  background-color: lightblue;
+  max-width: 1200px;
+  max-height: 700px;
+}
+.soc-network{
+  display: inline-block;
+  padding: 10px;
+}
+.soc-network-logo{
+  background-color: blue;
+  height: 50px;
+  width: 50px;
+  vertical-align: middle; 
+}
+#contacts-button{
+  height: 50px;
+  width: 100px;
+  border-radius: 15px;
+}
+/*Contacts-----*/
+
+/*-----Footer-----*/
+footer{
+  padding-top: 20px 0;
+  background: lightblue;
+  min-height: 100px;
+}
+/*Footer-----*/
