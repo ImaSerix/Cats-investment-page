@@ -29,3 +29,6 @@ function openDropdown(elem){
   if (dropdownOpen) dropdown.style.display = "block";
   else dropdown.style.display = "none";
 }
+function closeExtraInfo (){
+  document.getElementById("extra-info-container").remove("extra-info-active");
+}
