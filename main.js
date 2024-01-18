@@ -29,6 +29,13 @@ function openDropdown(elem){
   if (dropdownOpen) dropdown.style.display = "block";
   else dropdown.style.display = "none";
 }
+function openExtraInfo(image){
+  const extraInfo = document.getElementById("extra-info-container");
+  extraInfo.classList.add("extra-info-active");
+  document.getElementById("extra-info-image").src = image;
+  document.body.classList.add("stop");
+}
 function closeExtraInfo (){
-  document.getElementById("extra-info-container").remove("extra-info-active");
+  document.getElementById("extra-info-container").classList.remove("extra-info-active");
+  document.body.classList.remove("stop");
 }
