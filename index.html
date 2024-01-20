@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="lv">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -49,8 +49,14 @@
     <section id = "banner">
       <div class = "bg-container"></div>
       <div class = "banner-text framed text-right w-100 h-100">
-        <h2 class = "font-size-40 text-uppercase">Best choice</h2>
-        <p class = "font-size-30">Start invests with us <button class = "button inline font-size-30" id = "banner-button" onclick="alertUseless()">Join</button></p>
+        <div id = "banner-text-container" class = "pad-10">
+          <p class = "font-size-40 text-uppercase font-weight-bold">Cats know best:</p>
+          <div id = "banner-text-split">
+            <p class = "font-size-30">Invest today,</p>
+            <p class = "font-size-30">ensure a cozy family nest tomorrow!</p>
+            <button class = "button inline font-size-30" id = "banner-button" onclick="alertUseless()">Join</button>
+          </div>
+        </div>
       </div>
     </section>
   </header>
@@ -66,24 +72,24 @@
         </nav>
         <div id = "Team" class = "slideshow about w-100 h-100 active">
           <div id = "team-container">
-            <div id = "team-container-slideshow-slide-1" class = "slideshow-slide slideshow-active member frame pad-20" id = "ceo">
-              <a class = "extra-info-image" onclick="openExtraInfo('img/beluga.jpg')"><img class = "member-photo" src="img/beluga.jpg"></a>
+            <div id = "team-container-slideshow-slide-1" class = "slideshow-slide slideshow-active member frame pad-20">
+              <img class = "member-photo" src="img/beluga.jpg">
               <div class = "member-info">
                 <h3 class = "member-name">Felix Investon</h3>
                 <p class = "member-rank">CEO</p>
                 <p class = "member-text hide">Felix Investon, a financial virtuoso, shapes investments that marry returns and feline financial excellence</p>
               </div>
             </div>
-            <div id = "team-container-slideshow-slide-2" class = "slideshow-slide member frame pad-20" id = "helper">
-              <a class = "extra-info-image" onclick="openExtraInfo('gif/chipi-chapa.gif')"><img class = "member-photo" src="img/justCat.webp"></a>
+            <div id = "team-container-slideshow-slide-2" class = "slideshow-slide member frame pad-20">
+              <img class = "member-photo" src="img/justCat.webp">
               <div class = "member-info">
                 <h3 class = "member-name">Chipi Chapa</h3>
                 <p class = "member-rank">just a cat</p>
                 <p class = "member-text hide">Chipi chipi chapa chapa Dubi dubi daba daba Magico mi dubi dubi Boom boom boom boom!</p>
               </div>
             </div>
-            <div id = "team-container-slideshow-slide-3" class = "slideshow-slide member frame pad-20" id = "developer">
-              <a class = "extra-info-image" onclick="openExtraInfo('gif/developer.gif')"><img class = "member-photo" src="img/developer.jfif"></a>
+            <div id = "team-container-slideshow-slide-3" class = "slideshow-slide member frame pad-20">
+             <img class = "member-photo" src="img/developer.jfif">
               <div class = "member-info">
                 <h3 class = "member-name">Oscar Velvetpaw</h3>
                 <p class = "member-rank">developer</p>
@@ -112,24 +118,24 @@
     </section>
     <section id = "reviews">
       <div class = "section-header pad-10 font-size-30">Reviews</div>
-      <div class = "flex-box slideshow-container section-container pad-20 w-100 h-100" id = "reviews-container">
-        <div id = "reviews-container-slideshow-slide-1" class = "slideshow-slide slideshow-active review frame pad-20">
-          <a class = "extra-info-image" onclick="openExtraInfo('img/bananaCat.jpg')"><img class = "review-photo" src="img/bananaCat.jpg"></a>
+      <div class = "flex-box slideshow-container section-container pad-10 w-100 h-100" id = "reviews-container">
+        <div id = "reviews-container-slideshow-slide-1" class = "slideshow-slide slideshow-active review frame pad-10">
+         <img class = "review-photo" src="img/bananaCat.jpg">
           <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/bananaCat.jpg')">Name Surname 1</a></h3>
           <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review frame pad-20">
-          <a class = "extra-info-image" onclick="openExtraInfo('gif/catDance.gif')"><img class = "review-photo" src = "img/dancingCat.jpg"></a>
+        <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review frame pad-10">
+         <img class = "review-photo" src = "img/dancingCat.jpg">
           <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('gif/catDance.gif')">Name Surname 2</a></h3>
           <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review frame pad-20">
-          <a class = "extra-info-image" onclick="openExtraInfo('gif/jumpingCat.gif')"><img class = "review-photo" src ="img/jumpingCat.jpg"></a>
+        <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review frame pad-10">
+         <img class = "review-photo" src ="img/jumpingCat.jpg">
           <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('gif/jumpingCat.gif')">Name Surname 3</a></h3>
           <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
-        <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review frame pad-20">
-          <a class = "extra-info-image" onclick="openExtraInfo('img/huh.jpg')"><img class = "review-photo" src = "img/huh.jpg"></a>
+        <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review frame pad-10">
+          <img class = "review-photo" src = "img/huh.jpg">
           <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/huh.jpg')">Name Surname 4</a></h3>
           <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
@@ -166,7 +172,7 @@
           </p>
           <p>
             <label for="invest-policy">Investment policy</label>
-            <select type="" id = "invest-policy">
+            <select id = "invest-policy">
               <option value="0.05">Calm 5%/per year</option>
               <option value="0.10">Middle 10%/per year</option>
               <option value="0.15">Agressive 15%/per year</option>
@@ -222,11 +228,11 @@
           </p>
           <p>
             <label for="consultation-time">Choose avaible time: </label>
-            <select id="consultation-time" required></select>
+            <select id="consultation-time"></select>
           </p>
           <p>
             <label for="consultation-email">Your contact e-mail: </label>
-            <input type="email" id = "consultation-email" placeholder = "example@email.com"pattern="[a-z0-9_%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+            <input type="email" id = "consultation-email" placeholder = "example@email.com" pattern="[a-z0-9_%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
           </p>
           <button>Make an entry</button>
           <script src="cosultationControl.js"></script>
