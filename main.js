@@ -39,3 +39,6 @@ function closeExtraInfo (){
   document.getElementById("extra-info-container").classList.remove("extra-info-active");
   document.body.classList.remove("stop");
 }
+function alertUseless(){
+  alert("This button is useless, but it could do something useful");
+}

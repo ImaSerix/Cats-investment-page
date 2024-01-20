@@ -10,13 +10,14 @@
   <meta name="viewport" content="width=device-width">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js"></script>
+  <script src="dates.js"></script>
 </head>
 
 <body>
   <header class = "grid">
     <section id = "top" class = "fixed">
       <nav id = "top-nav" class = "">
-        <div class = "logo"></div>
+        <img class = "logo" src="img/logo.png" alt="logo">
         <a onclick="openMenu()"><img src="img/menu.png" id="navigation-menu-button" alt="menu"></a>
         <ul id = "navigation" class = "grid">
           <li class = "navigation-item">
@@ -49,7 +50,7 @@
       <div class = "bg-container"></div>
       <div class = "banner-text framed text-right w-100 h-100">
         <h2 class = "font-size-40 text-uppercase">Best choice</h2>
-        <p class = "font-size-30">Start invests with us → <button class = "button inline font-size-30" id = "banner-button">Join</button></p>
+        <p class = "font-size-30">Start invests with us <button class = "button inline font-size-30" id = "banner-button" onclick="alertUseless()">Join</button></p>
       </div>
     </section>
   </header>
@@ -66,24 +67,27 @@
         <div id = "Team" class = "slideshow about w-100 h-100 active">
           <div id = "team-container">
             <div id = "team-container-slideshow-slide-1" class = "slideshow-slide slideshow-active member frame pad-20" id = "ceo">
-              <img class = "member-photo">
+              <a class = "extra-info-image" onclick="openExtraInfo('img/beluga.jpg')"><img class = "member-photo" src="img/beluga.jpg"></a>
               <div class = "member-info">
-                <h3 class = "member-name">Name Surname 1</h3>
-                <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+                <h3 class = "member-name">Felix Investon</h3>
+                <p class = "member-rank">CEO</p>
+                <p class = "member-text hide">Felix Investon, a financial virtuoso, shapes investments that marry returns and feline financial excellence</p>
               </div>
             </div>
             <div id = "team-container-slideshow-slide-2" class = "slideshow-slide member frame pad-20" id = "helper">
-              <img class = "member-photo">
+              <a class = "extra-info-image" onclick="openExtraInfo('gif/chipi-chapa.gif')"><img class = "member-photo" src="img/justCat.webp"></a>
               <div class = "member-info">
-                <h3 class = "member-name">Name Surname 2</h3>
-                <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+                <h3 class = "member-name">Chipi Chapa</h3>
+                <p class = "member-rank">just a cat</p>
+                <p class = "member-text hide">Chipi chipi chapa chapa Dubi dubi daba daba Magico mi dubi dubi Boom boom boom boom!</p>
               </div>
             </div>
             <div id = "team-container-slideshow-slide-3" class = "slideshow-slide member frame pad-20" id = "developer">
-              <img class = "member-photo">
+              <a class = "extra-info-image" onclick="openExtraInfo('gif/developer.gif')"><img class = "member-photo" src="img/developer.jfif"></a>
               <div class = "member-info">
-                <h3 class = "member-name">Name Surname 3</h3>
-                <p class = "member-text">Some Some Some Some Some Some Some Some Some Some Some words</p>
+                <h3 class = "member-name">Oscar Velvetpaw</h3>
+                <p class = "member-rank">developer</p>
+                <p class = "member-text hide">Purr, Meow, Mrow, Mew, Nyaa, Mur, Meow-meow, Miaow, Nyaan, Nyan</p>
               </div>
             </div>
             <a class="slideshow-button-prev" data-containerid = "team-container" onclick="plusSlides(this, -1)">&#10094;</a>
@@ -92,16 +96,16 @@
         </div>
         <div id = "History" class = "about w-100 h-100">
           <div class = "pad-20">
-            <img id = "History-img" src ="img/guy.webp">
-            <p class = "font-size-20 text-indent-30 text-justify">In 2020, visionary entrepreneur <a class = "extra-info" onclick="openExtraInfo('img/guy.webp')">Elias Vanderburg</a> founded "Financial Horizon" to revolutionize investments. Blending advanced technology with a savvy approach, the company quickly became a trailblazer. By employing artificial intelligence for market analysis, it offered clients next-gen investment opportunities. Today, "Financial Horizon" stands as a symbol of innovation, setting new standards in the dynamic world of finance.</p>
-            <p class = "font-size-20 text-indent-30 text-justify">"Financial Horizon" swiftly became a pivotal player in the financial realm, introducing a spectrum of investment products, from tailored portfolio management to ventures into the realm of cryptocurrencies. Renowned for its individualized client approach and commitment to cutting-edge technologies, the company emerged as a beacon of trust and innovation. Continually shaping the financial landscape, "Financial Horizon" inspires others with its dynamic and successful trajectory in the ever-evolving world of finance.</p>
+            <img id = "History-img" src ="img/beluga.jpg">
+            <p class = "font-size-20 text-indent-30 text-justify">In 2020, visionary entrepreneur <a class = "extra-info" onclick="openExtraInfo('img/beluga.jpg')">Felix Investon</a> founded "Financial Horizon" to revolutionize investments. By employing artificial intelligence for market analysis, it offered clients next-gen investment opportunities. Today, "Financial Horizon" stands as a symbol of innovation, setting new standards in the dynamic world of finance.</p>
+            <p class = "font-size-20 text-indent-30 text-justify">"Financial Horizon" swiftly became a pivotal player in the financial realm, introducing a spectrum of investment products, from tailored portfolio management to ventures into the realm of cryptocurrencies. Continually shaping the financial landscape, "Financial Horizon" inspires others with its dynamic and successful trajectory in the ever-evolving world of finance.</p>
           </div>
         </div>
         <div id = "Location" class = "about w-100 h-100">
           <div class = "pad-20">
             <img src="img/building.png" id = "Location-img">
-            <p class = "font-size-20 text-indent-30 text-justify">Expanding its footprint across major financial hubs, "Financial Horizon" strategically established its flagship branch in the heart of Manhattan, New York. Nestled amidst the skyscrapers of Wall Street, the company's iconic office symbolizes its influence in the global financial landscape. With plans for additional branches in key cities like London and Singapore, "Financial Horizon" aims to bring its innovative approach to investment to clients around the world.</p>
-            <p class = "font-size-20 text-indent-30 text-justify">The eco-friendly building, draped in lush greenery, embodies the company's commitment to environmental responsibility. With a focus on paperless transactions, recycling, and carbon offset programs, "Financial Horizon" champions a green agenda. This dedication not only shapes a greener future but also encourages clients and industry peers to adopt eco-conscious practices in the financial realm. "Financial Horizon" strives to be a catalyst for positive change, blending financial expertise with a deep commitment to a sustainable future.</p>
+            <p class = "font-size-20 text-indent-30 text-justify">Expanding its footprint across major financial hubs, "Financial Horizon" strategically established its flagship branch in the heart of Manhattan, New York. With plans for additional branches in key cities like London and Singapore, "Financial Horizon" aims to bring its innovative approach to investment to clients around the world.</p>
+            <p class = "font-size-20 text-indent-30 text-justify">The <a class = "extra-info" onclick="openExtraInfo('img/building.png')">eco-friendly building</a>, draped in lush greenery, embodies the company's commitment to environmental responsibility. This dedication not only shapes a greener future but also encourages clients and industry peers to adopt eco-conscious practices in the financial realm. "Financial Horizon" strives to be a catalyst for positive change, blending financial expertise with a deep commitment to a sustainable future.</p>
           </div>
         </div>
       </div>
@@ -110,23 +114,23 @@
       <div class = "section-header pad-10 font-size-30">Reviews</div>
       <div class = "flex-box slideshow-container section-container pad-20 w-100 h-100" id = "reviews-container">
         <div id = "reviews-container-slideshow-slide-1" class = "slideshow-slide slideshow-active review frame pad-20">
-          <img class = "review-photo">
-          <h3 class = "review-name">Name Surname 1</h3>
+          <a class = "extra-info-image" onclick="openExtraInfo('img/bananaCat.jpg')"><img class = "review-photo" src="img/bananaCat.jpg"></a>
+          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/bananaCat.jpg')">Name Surname 1</a></h3>
           <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
         <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review frame pad-20">
-          <img class = "review-photo">
-          <h3 class = "review-name">Name Surname 2</h3>
+          <a class = "extra-info-image" onclick="openExtraInfo('gif/catDance.gif')"><img class = "review-photo" src = "img/dancingCat.jpg"></a>
+          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('gif/catDance.gif')">Name Surname 2</a></h3>
           <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
         <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review frame pad-20">
-          <img class = "review-photo">
-          <h3 class = "review-name">Name Surname 3</h3>
+          <a class = "extra-info-image" onclick="openExtraInfo('gif/jumpingCat.gif')"><img class = "review-photo" src ="img/jumpingCat.jpg"></a>
+          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('gif/jumpingCat.gif')">Name Surname 3</a></h3>
           <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
         <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review frame pad-20">
-          <img class = "review-photo">
-          <h3 class = "review-name">Name Surname 4</h3>
+          <a class = "extra-info-image" onclick="openExtraInfo('img/huh.jpg')"><img class = "review-photo" src = "img/huh.jpg"></a>
+          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/huh.jpg')">Name Surname 4</a></h3>
           <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
         </div>
         <a class="slideshow-button-prev" data-containerid = "reviews-container" onclick="plusSlides(this, -1)">&#10094;</a>
@@ -178,19 +182,55 @@
     </section>
     <section id="contacts">
       <div class = "section-header pad-10 font-size-30">Contacts</div>
-      <div class = "section-container pad-20 w-100 h-100 text-centre">
+      <div class = "section-container pad-20 w-100 text-centre">
         <div class = "flex-box content-space-around pad-20">
           <div>
-            <p class = "soc-network">Our Instagramm</p><img class = "soc-network-logo" id="instagramm">
+            <p class = "soc-network hide">Our Instagramm</p><a href="#"><img class = "soc-network-logo" id="instagramm" src="img/inst.png"></a>
           </div>
           <div>
-            <p class = "soc-network">Our Facebook</p><img class = "soc-network-logo" id="facebook">
+            <p class = "soc-network hide">Our Facebook</p><a href="#"><img class = "soc-network-logo" id="facebook" src="img/facebook.png"></a>
           </div>
           <div>
-            <p class = "soc-network">Our youtube</p><img class = "soc-network-logo" id="youtube">
+            <p class = "soc-network hide">Our youtube</p><a href="#"><img class = "soc-network-logo" id="youtube" src="img/yt.png"></a>
           </div>
         </div>
-        <button id="contacts-button">Join us</button>
+        <button id="contacts-button" onclick="alertUseless()">Join us</button>
+      </div>
+    </section>
+    <section id = "help">
+      <div class = "section-header pad-10 font-size-30">Help</div>
+      <div class = "section-container pad-20 w-100 text-centre" id = "help-container">
+        <div id = "faq">
+          <p class = "faq-question">
+            <h3>1. Question</h3>
+            Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
+          </p>
+          <p class = "faq-question">
+            <h3>2. Question</h3>
+            Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
+          </p>
+          <p class = "faq-question">
+            <h3>3. Question</h3>
+            Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
+          </p>
+        </div>
+        <form id = "online-consultation" onsubmit="formAction()">
+          <h3>You can sign up for an online consultation</h3>
+          <p>
+            <label for="consultation-date">Choose date: </label>
+            <input type="date" id="consultation-date" oninput="makeAvaibleTimeOptions(this)" required>
+          </p>
+          <p>
+            <label for="consultation-time">Choose avaible time: </label>
+            <select id="consultation-time" required></select>
+          </p>
+          <p>
+            <label for="consultation-email">Your contact e-mail: </label>
+            <input type="email" id = "consultation-email" placeholder = "example@email.com"pattern="[a-z0-9_%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+          </p>
+          <button>Make an entry</button>
+          <script src="cosultationControl.js"></script>
+        </form>
       </div>
     </section>
   </main>
@@ -202,7 +242,12 @@
   </footer>
   <section id = "extra-info-container">
     <a id = "extra-info-bg" onclick="closeExtraInfo()"></a>
-    <img id = "extra-info-image" src="img/building.png">
+    <div class = "pad-20">
+      <figure>
+        <img id = "extra-info-image" src="img/building.png">
+        <a onclick="closeExtraInfo()"><img id = "extra-info-close" src="img/cross.png"></a>
+      </figure>
+    </div>
   </section>
 </body>
 </html>
