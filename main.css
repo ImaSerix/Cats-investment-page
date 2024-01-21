@@ -1,7 +1,15 @@
+/*Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
 /*Overall classes*/
 .font-size-20{font-size: 20px;}
-.font-size-30{font-size: 30px;}
-.font-size-40{font-size: 40px;}
+.font-size-30{font-size: 1.5em;}
+.font-size-40{font-size: 2em;}
 .font-weight-bold{font-weight: bold;}
 .inline{display: inline ;}
 .inline-block{display: inline-block;}
@@ -35,9 +43,12 @@
 :root{
   --color-text: bisque;
   --color-bg: rgba(245, 206, 99, 0.3);
-  --color-button: rgb(227, 180, 71);
   --color-button-hovered: rgb(235, 171, 23);
   --color-bg-phone: rgba(182, 125, 55, 0.6);
+  --color-main: rgb(247, 242, 218);
+  --color-navigation: rgb(227, 180, 71);
+  --color-button: var(--color-navigation);
+  --color-navigation-hovered: rgb(182, 125, 55);
 }
 /*Overall options*/
 .stop{
@@ -50,7 +61,10 @@
   pointer-events: none;
 }
 
-
+body{
+  background-color: var(--color-main);
+  margin: 0;
+}
 
 /*Slideshow Buttons*/
 .slideshow-button-prev, .slideshow-button-next {
@@ -135,7 +149,6 @@ header{
 }
 /*---Top section + navbar---*/
 #top{
-  background: lightblue;
   min-height: 120px;
   top: 0;
   right: 0;
@@ -144,7 +157,7 @@ header{
 }
 
 #top-nav{
-  background: lightblue;
+  background: var(--color-navigation);
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -157,6 +170,7 @@ header{
 }
 #navigation{
   grid-auto-flow: column;
+  box-sizing: border-box;
 }
 .navigation-item{
   padding-left: 10px;
@@ -169,6 +183,9 @@ header{
 .navigation-item:nth-child(even){
   border-left: black 1px solid;
   border-right: black 1px solid;
+}
+.navigation-item a:hover{
+  color: var(--color-navigation-hovered);
 }
 .navigation-image{
   height: 50px;
@@ -188,7 +205,8 @@ header{
 .dropdown{
   display: none;
   position: fixed;
-  background: white;
+  background: var(--color-button-hovered);
+  border-radius: 5px;
   text-align: end;
 }
 .dropdown-button{
@@ -206,8 +224,11 @@ header{
     height: 70vh;
     grid-template-rows: 60px auto; 
   }
-  .navigation-item a{
-    color:gray;
+  .navigation-item a:hover{
+    color: black;
+  }
+  a.dropdown-opened{
+    color:var(--color-navigation-hovered)
   }
   #top-nav{
     font-size: 15px;
@@ -341,10 +362,8 @@ header{
 }
 /*Banner---*/
 /*Header-----*/
-
 /*-----About section-----*/
 #about {
-  background-color: lightblue;
   max-width: 1200px;
 }
 .about{
@@ -352,38 +371,40 @@ header{
 }
 .about-nav-option{
   border: 0;
-  border-bottom: black 1px solid;;
+  border-bottom: var(--color-navigation-hovered) 2px solid;;
   padding: 5px;
-  background-color: lightblue;
-}
-.about-nav-option:not(.active):hover{
-  background-color: aquamarine;
+  background: none;
 }
 .about-nav-option.active{
-  border: black 1px solid;
-  border-bottom: 0;
+  color: var(--color-navigation-hovered);
 }
+.about-nav-option:not(.active):hover{
+  cursor: pointer;
+  color: var(--color-navigation-hovered);
+}
+.about-nav-option.active{
+  border: var(--color-navigation-hovered) 2px solid;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 0;
+} 
 .about-nav-title{
-  padding: 5px;
-  padding-left: 0px;
-  border-bottom: black 1px solid;
-  font-weight: bold;
+  border-bottom: var(--color-navigation-hovered) 2px solid;
 }
 .about-nav-fill{
   padding: 5px;
-  padding-right: 0px;
-  border-bottom: black 1px solid;
+  border-bottom: var(--color-navigation-hovered) 2px solid;
 }
 #about-nav{
   grid-auto-flow: column;
   grid-template-columns: repeat(4, max-content) 1fr;
   margin-bottom: 10px;
 }
-.about{
-  display: none;
-}
 .about.active{
   display: block;
+}
+#about nav > *{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /*---Team---*/
 #team-container{
@@ -395,14 +416,21 @@ header{
   flex-basis: 200px;
   min-width: 150px;
   margin: 10px;
+  border-radius: 5px;
+  background: var(--color-navigation);
   .slideshow-button-prev, .slideshow-button-next{
     display: none;
   }
 }
 .member-photo{
-  background-color: blue;
   height: 150px;
   width: 150px;
+  border-radius: 5px;
+}
+@media screen and (max-width:450px){
+  #about nav > *{
+    padding: 5px;
+  }
 }
 @media screen and (max-width: 750px){
   #Team{
@@ -431,7 +459,6 @@ header{
       left: 0;
     }
     .member-photo{
-      background-color: blue;
       width: 100%;
       height: 100%;
     }
@@ -501,7 +528,6 @@ header{
 
 /*-----Reviews------*/
 #reviews{
-  background-color: lightblue;
   max-width: 1200px;
   .slideshow-button-prev, .slideshow-button-next{
     display: none;
@@ -570,7 +596,6 @@ header{
 
 /*-----Calculator------*/
 #calculator {
-  background-color: lightblue;
   max-width: 1200px;
   max-height: 650px;
 }
@@ -602,10 +627,8 @@ input::-webkit-inner-spin-button {
   aspect-ratio: 2/1;
 }
 /*Calculator------*/
-
 /*-----Contacts-----*/
 #contacts{
-  background-color: lightblue;
   max-width: 1200px;
   max-height: 700px;
 }
@@ -633,7 +656,6 @@ input::-webkit-inner-spin-button {
 
 /*-----Help-----*/
 #help{
-  background-color: lightblue;
   max-width: 1200px;
   max-height: 700px;
 }

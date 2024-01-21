@@ -26,6 +26,8 @@ function openMenu (){
 function openDropdown(elem){
   const dropdown = elem.parentElement.getElementsByClassName("dropdown")[0];
   dropdownOpen = !dropdownOpen;
+  if (dropdownOpen) elem.parentElement.getElementsByTagName("a")[0].classList.add("dropdown-opened");
+  else elem.parentElement.getElementsByTagName("a")[0].classList.remove("dropdown-opened");
   if (dropdownOpen) dropdown.style.display = "block";
   else dropdown.style.display = "none";
 }
