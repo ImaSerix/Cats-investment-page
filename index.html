@@ -14,31 +14,35 @@
 </head>
 
 <body>
-  <header class = "grid">
-    <section id = "top" class = "fixed">
-      <nav id = "top-nav" class = "">
+  <header class = "display-grid">
+    <section id = "top" class = "position-fixed top-0 right-0 left-0 z-index-100">
+      <h2 class = "display-none">Top section</h2>
+      <nav id = "top-nav" class = "display-flex align-items-center box-sizing-border-box justify-content-space-between">
         <img class = "logo" src="img/logo.png" alt="logo">
         <a onclick="openMenu()"><img src="img/menu.png" id="navigation-menu-button" alt="menu"></a>
-        <ul id = "navigation" class = "grid">
-          <li class = "navigation-item">
+        <ul id = "navigation" class = "display-grid box-sizing-border-box pad-10">
+          <li class = "navigation-item box-sizing-border-box">
             <a href="#">Home</a>
           </li>
-          <li class = "navigation-item has-dropdown">
-            <a href="#">About</a><button onclick="openDropdown(this)" class = "dropdown-button">&#9013;</button>
-            <ul class = "dropdown">
-              <li class = "dropdown-item"><a href="#">Team</a></li>
-              <li class = "dropdown-item"><a href="#">History</a></li>
-              <li class = "dropdown-item"><a href="#">Location</a></li>
+          <li class = "navigation-item box-sizing-border-box has-dropdown">
+            <a href="#about">About</a><button onclick="openDropdown(this)" class = "dropdown-button">&#9013;</button>
+            <ul class = "dropdown border-radius-5px text-align-end position-fixed pad-10">
+              <li class = "dropdown-item"><a href="#about" onclick = "tabChanger(this,'Team')">Team</a></li>
+              <li class = "dropdown-item"><a href="#about" onclick = "tabChanger(this,'History')">History</a></li>
+              <li class = "dropdown-item"><a href="#about" onclick = "tabChanger(this,'Location')">Location</a></li>
             </ul>
           </li>
-          <li class = "navigation-item">
-            <a href="#">Review</a>
+          <li class = "navigation-item box-sizing-border-box">
+            <a href="#reviews">Review</a>
           </li>
-          <li class = "navigation-item">
-            <a href="#">Calculator</a>
+          <li class = "navigation-item box-sizing-border-box">
+            <a href="#calculator">Calculator</a>
           </li>
-          <li class = "navigation-item">
-            <a href="#">Contacts</a>
+          <li class = "navigation-item box-sizing-border-box">
+            <a href="#contacts">Contacts</a>
+          </li>
+          <li class = "navigation-item box-sizing-border-box">
+            <a href="#help">Help</a>
           </li>
         </ul>
       </nav>
@@ -46,10 +50,11 @@
         <div class="progress-bar" id="myBar"></div>
       </div>
     </section>
-    <section id = "banner">
+    <section id = "banner" class = "box-sizing-border-box position-relative">
+      <h2 class = "display-none">Banner</h2>
       <div class = "bg-container"></div>
-      <div class = "banner-text framed text-right w-100 h-100">
-        <div id = "banner-text-container" class = "pad-10">
+      <div class = "banner-text framed text-right w-100 h-100 box-sizing-border-box display-flex flex-direction-column justify-content-center pad-10">
+        <div id = "banner-text-container" class = "pad-10 text-align-left z-index-10">
           <p class = "font-size-40 text-uppercase font-weight-bold">Cats know best:</p>
           <div id = "banner-text-split">
             <p class = "font-size-30">Invest today,</p>
@@ -63,36 +68,36 @@
   <main>
     <section id = "about">
       <div class = "section-container pad-20 w-100 h-100">
-        <nav id = "about-nav" class = "grid">
-          <div class = "inline-block about-nav-title font-size-30">About</div>
-          <button onclick = "tabChanger(this,'Team')" class = "inline-block about-nav-option font-size-20 active">Team</button>
-          <button onclick = "tabChanger(this,'History')" class = "inline-block about-nav-option font-size-20">History</button>
-          <button onclick = "tabChanger(this,'Location')" class = "inline-block about-nav-option font-size-20">Location</button>
+        <nav id = "about-nav" class = "display-grid">
+          <h2 class = "inline-block about-nav-title font-size-30">About</h2>
+          <button id = "Team-option" onclick = "tabChanger(this,'Team')" class = "inline-block about-nav-option font-size-20 active">Team</button>
+          <button id = "History-option" onclick = "tabChanger(this,'History')" class = "inline-block about-nav-option font-size-20">History</button>
+          <button id = "Location-option" onclick = "tabChanger(this,'Location')" class = "inline-block about-nav-option font-size-20">Location</button>
           <span class = "about-nav-fill"></span>
         </nav>
         <div id = "Team" class = "slideshow about w-100 h-100 active">
           <div id = "team-container">
-            <div id = "team-container-slideshow-slide-1" class = "slideshow-slide slideshow-active member pad-20">
-              <img class = "member-photo" src="img/beluga.jpg">
+            <div id = "team-container-slideshow-slide-1" class = "slideshow-slide slideshow-active member margin-10 border-radius-5px text-align-center pad-20">
+              <img class = "member-photo" src="img/beluga.jpg" alt = "Felix Investon">
               <div class = "member-info">
                 <h3 class = "member-name">Felix Investon</h3>
-                <p class = "member-rank">CEO</p>
+                <p class = "font-style-italic">CEO</p>
                 <p class = "member-text hide">Felix Investon, a financial virtuoso, shapes investments that marry returns and feline financial excellence</p>
               </div>
             </div>
-            <div id = "team-container-slideshow-slide-2" class = "slideshow-slide member pad-20">
-              <img class = "member-photo" src="img/justCat.webp">
+            <div id = "team-container-slideshow-slide-2" class = "slideshow-slide member text-align-center border-radius-5px margin-10 pad-20">
+              <img class = "member-photo" src="img/justCat.webp" alt = "Chipi Chapa">
               <div class = "member-info">
                 <h3 class = "member-name">Chipi Chapa</h3>
-                <p class = "member-rank">just a cat</p>
+                <p class = "font-style-italic">just a cat</p>
                 <p class = "member-text hide">Chipi chipi chapa chapa Dubi dubi daba daba Magico mi dubi dubi Boom boom boom boom!</p>
               </div>
             </div>
-            <div id = "team-container-slideshow-slide-3" class = "slideshow-slide member pad-20">
-             <img class = "member-photo" src="img/developer.jfif">
+            <div id = "team-container-slideshow-slide-3" class = "slideshow-slide member text-align-center border-radius-5px margin-10 pad-20">
+             <img class = "member-photo" src="img/developer.jfif" alt = "Oscar Velvetpaw">
               <div class = "member-info">
                 <h3 class = "member-name">Oscar Velvetpaw</h3>
-                <p class = "member-rank">developer</p>
+                <p class = "font-style-italic">developer</p>
                 <p class = "member-text hide">Purr, Meow, Mrow, Mew, Nyaa, Mur, Meow-meow, Miaow, Nyaan, Nyan</p>
               </div>
             </div>
@@ -102,14 +107,14 @@
         </div>
         <div id = "History" class = "about w-100 h-100">
           <div class = "pad-20">
-            <img id = "History-img" src ="img/beluga.jpg">
+            <img id = "History-img" class = "margin-10 border-radius-5px margin-10" src ="img/beluga.jpg" alt = "Felix Investon">
             <p class = "font-size-20 text-indent-30 text-justify">In 2020, visionary entrepreneur <a class = "extra-info" onclick="openExtraInfo('img/beluga.jpg')">Felix Investon</a> founded "Financial Horizon" to revolutionize investments. By employing artificial intelligence for market analysis, it offered clients next-gen investment opportunities. Today, "Financial Horizon" stands as a symbol of innovation, setting new standards in the dynamic world of finance.</p>
             <p class = "font-size-20 text-indent-30 text-justify">"Financial Horizon" swiftly became a pivotal player in the financial realm, introducing a spectrum of investment products, from tailored portfolio management to ventures into the realm of cryptocurrencies. Continually shaping the financial landscape, "Financial Horizon" inspires others with its dynamic and successful trajectory in the ever-evolving world of finance.</p>
           </div>
         </div>
         <div id = "Location" class = "about w-100 h-100">
           <div class = "pad-20">
-            <img src="img/building.png" id = "Location-img">
+            <img src="img/building.png" class = "margin-10 border-radius-5px" id = "Location-img" alt = "our building">
             <p class = "font-size-20 text-indent-30 text-justify">Expanding its footprint across major financial hubs, "Financial Horizon" strategically established its flagship branch in the heart of Manhattan, New York. With plans for additional branches in key cities like London and Singapore, "Financial Horizon" aims to bring its innovative approach to investment to clients around the world.</p>
             <p class = "font-size-20 text-indent-30 text-justify">The <a class = "extra-info" onclick="openExtraInfo('img/building.png')">eco-friendly building</a>, draped in lush greenery, embodies the company's commitment to environmental responsibility. This dedication not only shapes a greener future but also encourages clients and industry peers to adopt eco-conscious practices in the financial realm. "Financial Horizon" strives to be a catalyst for positive change, blending financial expertise with a deep commitment to a sustainable future.</p>
           </div>
@@ -117,27 +122,35 @@
       </div>
     </section>
     <section id = "reviews">
-      <div class = "section-header pad-10 font-size-30">Reviews</div>
-      <div class = "flex-box slideshow-container section-container pad-10 w-100 h-100" id = "reviews-container">
-        <div id = "reviews-container-slideshow-slide-1" class = "slideshow-slide slideshow-active review frame pad-10">
-         <img class = "review-photo" src="img/bananaCat.jpg">
-          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/bananaCat.jpg')">Name Surname 1</a></h3>
-          <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
+      <h2 id = "review-header" class = "section-header pad-10 font-size-30">Reviews</h2>
+      <div class = "slideshow-container pad-10 w-100 h-100 box-sizing-border-box" id = "reviews-container">
+        <div id = "reviews-container-slideshow-slide-1" class = "slideshow-slide slideshow-active review pad-10">
+         <img class = "review-photo" src="img/bananaCat.jpg" alt = "Bella Lapkova">
+          <div class="review-info">
+            <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/bananaCat.jpg')">Bella Lapkova</a></h3>
+            <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
+          </div>
         </div>
-        <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review frame pad-10">
-         <img class = "review-photo" src = "img/dancingCat.jpg">
-          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('gif/catDance.gif')">Name Surname 2</a></h3>
-          <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review pad-10">
+         <img class = "review-photo" src = "img/crunchyCat.png" alt ="Tiger Springpounce">
+          <div class="review-info">
+            <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/crunchyCat.png')">Tiger Springpounce</a></h3>
+            <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
+          </div>
         </div>
-        <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review frame pad-10">
-         <img class = "review-photo" src ="img/jumpingCat.jpg">
-          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('gif/jumpingCat.gif')">Name Surname 3</a></h3>
-          <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review pad-10">
+         <img class = "review-photo" src ="img/jumpingCat.jpg" alt = "Charlie Murrimate">
+          <div class="review-info">
+            <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/jumpingCat.jpg')">Charlie Murrimate</a></h3>
+            <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
+          </div>
         </div>
-        <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review frame pad-10">
-          <img class = "review-photo" src = "img/huh.jpg">
-          <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/huh.jpg')">Name Surname 4</a></h3>
-          <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
+        <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review pad-10">
+          <img class = "review-photo" src = "img/huh.jpg" alt = "Grace Kittycliff">
+          <div class="review-info">
+            <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/huh.jpg')">Grace Kittycliff</a></h3>
+            <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
+          </div>
         </div>
         <a class="slideshow-button-prev" data-containerid = "reviews-container" onclick="plusSlides(this, -1)">&#10094;</a>
         <a class="slideshow-button-next" data-containerid = "reviews-container" onclick="plusSlides(this, 1)">&#10095;</a>
@@ -145,16 +158,16 @@
       </div>
     </section>
     <section id = "calculator">
-      <div class = "section-header pad-10 font-size-30">Calculator</div>
-      <div class = "flex-box section-container pad-20 w-100 content-space-between" id = "calculator-container">
-        <div class = "font-size-20 flex-box text-centre" id="calculator-options">
+      <h2 class = "section-header pad-10 font-size-30">Calculator</h2>
+      <div class = "display-flex section-container pad-20 w-100 content-space-between" id = "calculator-container">
+        <div class = "font-size-20 display-flex text-align-center justify-content-space-between margin-10" id="calculator-options">
           <p>
             <label for="invest-count">Investment in each period</label>
-            <input type="number" value = 100 min = 0 max = 100000 id = "invest-count">
+            <input type="number" class = "border-radius-5px" value = 100 min = 0 max = 100000 id = "invest-count">
           </p>
           <p>
             <label for="invest-periodicity">Invest periodicity </label>
-            <select id = "invest-periodicity">
+            <select id = "invest-periodicity" class = "border-radius-5px">
               <option value="52">Weekly</option>
               <option value="12">Monthly</option>
               <option value="4">Quarterly</option>
@@ -163,22 +176,22 @@
           </p>
           <p>
             <label for="invest-period">invest period</label>
-            <input type="range" value = 30 min = 1 max = 60 id = "invest-period" oninput="rangeValue.value = this.value"> <!-- В идеале сделать херню, которая будет плавать над шариком, но маловероятно, что сделаешь ЛОЛ-->
+            <input type="range" class = "border-radius-5px" value = 30 min = 1 max = 60 id = "invest-period" oninput="rangeValue.value = this.value"> <!-- В идеале сделать херню, которая будет плавать над шариком, но маловероятно, что сделаешь ЛОЛ-->
             <output id = "rangeValue">30</output><span>yr</span>
           </p>
           <p>
             <label for="invest-initial">An initial fee</label>
-            <input type="number" value = 200 min = 0 max = 1000000 id = "invest-initial">
+            <input type="number" class = "border-radius-5px" value = 200 min = 0 max = 1000000 id = "invest-initial">
           </p>
           <p>
             <label for="invest-policy">Investment policy</label>
-            <select id = "invest-policy">
+            <select id = "invest-policy" class = "border-radius-5px">
               <option value="0.05">Calm 5%/per year</option>
               <option value="0.10">Middle 10%/per year</option>
               <option value="0.15">Agressive 15%/per year</option>
             </select>
           </p>
-          <button id = "calculator-options-button">Calculate</button>
+          <button id = "calculator-options-button" class = "border-radius-5px">Calculate</button>
         </div>
         <div id = "calculator-graph-container">
           <canvas id = "calculator-graph" style="height: 125px; width: 200px;"></canvas>
@@ -187,38 +200,38 @@
       </div>
     </section>
     <section id="contacts">
-      <div class = "section-header pad-10 font-size-30">Contacts</div>
-      <div class = "section-container pad-20 w-100 text-centre">
-        <div class = "flex-box content-space-around pad-20">
+      <h2 class = "section-header pad-10 font-size-30">Contacts</h2>
+      <div class = "section-container pad-20 w-100 text-align-center">
+        <div class = "display-flex justify-content-space-around pad-20">
           <div>
-            <p class = "soc-network hide">Our Instagramm</p><a href="#"><img class = "soc-network-logo" id="instagramm" src="img/inst.png"></a>
+            <p class = "soc-network hide">Our Instagramm</p><a href="#"><img class = "soc-network-logo" id="instagramm" src="img/inst.png" alt = "Instagramm"></a>
           </div>
           <div>
-            <p class = "soc-network hide">Our Facebook</p><a href="#"><img class = "soc-network-logo" id="facebook" src="img/facebook.png"></a>
+            <p class = "soc-network hide">Our Facebook</p><a href="#"><img class = "soc-network-logo" id="facebook" src="img/facebook.png" alt = "Facebook"></a>
           </div>
           <div>
-            <p class = "soc-network hide">Our youtube</p><a href="#"><img class = "soc-network-logo" id="youtube" src="img/yt.png"></a>
+            <p class = "soc-network hide">Our Youtube</p><a href="#"><img class = "soc-network-logo" id="youtube" src="img/yt.png" alt = "Youtube"></a>
           </div>
         </div>
-        <button id="contacts-button" onclick="alertUseless()">Join us</button>
+        <button id="contacts-button" class = "font-size-20" onclick="alertUseless()">Join us</button>
       </div>
     </section>
     <section id = "help">
-      <div class = "section-header pad-10 font-size-30">Help</div>
-      <div class = "section-container pad-20 w-100 text-centre" id = "help-container">
+      <h2 class = "section-header pad-10 font-size-30">Help</h2>
+      <div class = "section-container display-flex align-items-center justify-content-space-between pad-20 w-100 text-align-center" id = "help-container">
         <div id = "faq">
-          <p class = "faq-question">
+          <div class = "faq-question">
             <h3>1. Question</h3>
-            Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
-          </p>
-          <p class = "faq-question">
+            <p>Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text</p>
+          </div>
+          <div class = "faq-question">
             <h3>2. Question</h3>
-            Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
-          </p>
-          <p class = "faq-question">
+            <p>Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text</p>
+          </div>
+          <div class = "faq-question">
             <h3>3. Question</h3>
             Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
-          </p>
+          </div>
         </div>
         <form id = "online-consultation" onsubmit="formAction()">
           <h3>You can sign up for an online consultation</h3>
@@ -234,24 +247,25 @@
             <label for="consultation-email">Your contact e-mail: </label>
             <input type="email" id = "consultation-email" placeholder = "example@email.com" pattern="[a-z0-9_%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
           </p>
-          <button>Make an entry</button>
+          <button id = "online-consultation-button" class="pad-10 border-radius-5px">Make an entry</button>
           <script src="cosultationControl.js"></script>
         </form>
       </div>
     </section>
   </main>
   <footer>
-    <div class="section-container text-centre pad-20">
+    <div class="section-container text-align-center pad-20">
       <p>Made by me for me</p>
       <p>Not really copyright</p>
     </div>
   </footer>
-  <section id = "extra-info-container">
-    <a id = "extra-info-bg" onclick="closeExtraInfo()"></a>
+  <section id = "extra-info-container" class = "align-items-center justify-content-center top-0 bottom-0 left-0 right-0 margin-0 z-index-1000 position-fixed">
+    <h2 class = "display-none">Extra-info</h2>
+    <a id = "extra-info-bg" class = "position-absolute w-100 h-100" onclick="closeExtraInfo()"></a>
     <div class = "pad-20">
-      <figure>
-        <img id = "extra-info-image" src="img/building.png">
-        <a onclick="closeExtraInfo()"><img id = "extra-info-close" src="img/cross.png"></a>
+      <figure class="position-relative z-index-1000">
+        <img id = "extra-info-image" class = "w-100 h-100 display-block" src="img/building.png" alt = "extra big image">
+        <a onclick="closeExtraInfo()"><img id = "extra-info-close" class = "position-absolute top-0 right-0 border-radius-50p" src="img/cross.png" alt = "close"></a>
       </figure>
     </div>
   </section>

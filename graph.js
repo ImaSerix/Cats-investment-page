@@ -36,11 +36,15 @@ class Graph{
         const data = {labels:[], datasets: [
             {
                 label: "Investment size",
-                data:[]
+                data:[],
+                borderColor: '#b67d37',
+                backgroundColor: '#b67d37'
             },
             {
                 label: "invest growth",
-                data:[]
+                data:[],
+                borderColor: '#ebab17',
+                backgroundColor: '#ebab17'
             }]};
         const labelObj = this.getLabel(inputData.investPeriod);
         const DATA_COUNT = labelObj.dataCount;

@@ -1,13 +1,16 @@
 let menuOpen = false;
 let dropdownOpen = false;
 function tabChanger(elem, tabName){
-  elem.classList.add('active');
+  let targetId = elem.textContent + "-option";
+  const target = document.getElementById(targetId);
+  target.classList.add('active');
+  console.log(target);
   const tab_content = document.getElementsByClassName("about");
   const tabs = document.getElementsByClassName("about-nav-option");
   for (let tab of tab_content)
     if (tab.id != tabName) tab.classList.remove('active');
     else tab.classList.add('active');
-  for (let tab of tabs) if (elem != tab) tab.classList.remove('active');
+  for (let tab of tabs) if (target != tab) tab.classList.remove('active');
 }
 
 function openMenu (){
@@ -16,11 +19,11 @@ function openMenu (){
   menuOpen = !menuOpen;
   if (menuOpen) {
     navButton.src = "img/cross.png";
-    navMenu.style.display = "flex";
+    navMenu.classList.add("navigation-opened");
   }
   else {
     navButton.src = "img/menu.png";
-    navMenu.style.display = "none";
+    navMenu.classList.remove("navigation-opened");
   }
 }
 function openDropdown(elem){
