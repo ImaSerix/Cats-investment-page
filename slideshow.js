@@ -1,3 +1,5 @@
+//Made by:Imants Zvīdris (iz23053)
+
 let slideIndex = {
     "reviews-container": {
         "value":1,

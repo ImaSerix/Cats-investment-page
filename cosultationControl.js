@@ -1,3 +1,4 @@
+//Made by:Imants Zvīdris (iz23053)
 
 function valiDate(elem){
     if (Date (elem.value) < Date (elem.min)){
@@ -12,6 +13,7 @@ function valiDate(elem){
 }
 function makeAvaibleTimeOptions(elem){
     const consultTimeSelector = document.getElementById("consultation-time");
+    const consultationDateInput = document.getElementById("consultation-date");
     while (consultTimeSelector.childNodes[0]){
         consultTimeSelector.childNodes[0].remove();
     }
@@ -22,6 +24,8 @@ function makeAvaibleTimeOptions(elem){
             for (let time of date.times)
                 if (time.avaible) avaibleTimeList.push(time.time);
     }
+    if (!avaibleTimeList.length) consultationDateInput.classList.add("not-valide");
+    else consultationDateInput.classList.remove("not-valide");
     for (let time of avaibleTimeList){
         let option = document.createElement("option");
         option.value = time;

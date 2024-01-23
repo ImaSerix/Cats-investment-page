@@ -1,3 +1,6 @@
+<!--Made by:Imants Zvīdris (iz23053)-->
+
+
 <!doctype html>
 <html lang="en">
 
@@ -5,7 +8,8 @@
   <meta charset="utf-8">
   <meta name = "keywords" content="..."> <!-- Need to add some text here-->
   <meta name = "description" content="..."> <!-- Some text here-->
-  <title>Some title</title>
+  <title>Financial Horizon</title>
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
   <link rel="stylesheet" href="main.css">
   <meta name="viewport" content="width=device-width">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -22,27 +26,27 @@
         <a onclick="openMenu()"><img src="img/menu.png" id="navigation-menu-button" alt="menu"></a>
         <ul id = "navigation" class = "display-grid box-sizing-border-box pad-10">
           <li class = "navigation-item box-sizing-border-box">
-            <a href="#">Home</a>
+            <a href="#" onclick="closeMenu()">Home</a>
           </li>
           <li class = "navigation-item box-sizing-border-box has-dropdown">
-            <a href="#about">About</a><button onclick="openDropdown(this)" class = "dropdown-button">&#9013;</button>
+            <a href="#about" onclick="scroolToSection('about'); closeMenu(); return false;">About</a><button onclick="openDropdown(this)" class = "dropdown-button">&#9013;</button>
             <ul class = "dropdown border-radius-5px text-align-end position-fixed pad-10">
-              <li class = "dropdown-item"><a href="#about" onclick = "tabChanger(this,'Team')">Team</a></li>
-              <li class = "dropdown-item"><a href="#about" onclick = "tabChanger(this,'History')">History</a></li>
-              <li class = "dropdown-item"><a href="#about" onclick = "tabChanger(this,'Location')">Location</a></li>
+              <li class = "dropdown-item"><a href="#about" onclick="scroolToSection('about'); closeMenu(); tabChanger(this,'Team'); return false;">Team</a></li>
+              <li class = "dropdown-item"><a href="#about" onclick="scroolToSection('about'); closeMenu(); tabChanger(this,'History'); return false;">History</a></li>
+              <li class = "dropdown-item"><a href="#about" onclick="scroolToSection('about'); closeMenu(); tabChanger(this,'Location'); return false;">Location</a></li>
             </ul>
           </li>
           <li class = "navigation-item box-sizing-border-box">
-            <a href="#reviews">Review</a>
+            <a href="#reviews" onclick="scroolToSection('reviews'); closeMenu(); return false;">Review</a>
           </li>
           <li class = "navigation-item box-sizing-border-box">
-            <a href="#calculator">Calculator</a>
+            <a href="#calculator" onclick="scroolToSection('calculator'); closeMenu(); return false;">Calculator</a>
           </li>
           <li class = "navigation-item box-sizing-border-box">
-            <a href="#contacts">Contacts</a>
+            <a href = "#contacts" onclick="scroolToSection('contacts'); closeMenu(); return false;">Contacts</a>
           </li>
           <li class = "navigation-item box-sizing-border-box">
-            <a href="#help">Help</a>
+            <a href="#help" onclick="scroolToSection('help'); closeMenu(); return false;">Help</a>
           </li>
         </ul>
       </nav>
@@ -128,28 +132,28 @@
          <img class = "review-photo" src="img/bananaCat.jpg" alt = "Bella Lapkova">
           <div class="review-info">
             <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/bananaCat.jpg')">Bella Lapkova</a></h3>
-            <p class = "review-text">1. Some Some Some Some Some Some Some Some Some Some Some words</p>
+            <p class = "review-text">Felix Investon's strategies and personalized advice at Financial Horizon have made my investment journey truly incredible!</p>
           </div>
         </div>
         <div id = "reviews-container-slideshow-slide-2" class = "slideshow-slide review pad-10">
          <img class = "review-photo" src = "img/crunchyCat.png" alt ="Tiger Springpounce">
           <div class="review-info">
             <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/crunchyCat.png')">Tiger Springpounce</a></h3>
-            <p class = "review-text">2. Some Some Some Some Some Some Some Some Some Some Some words</p>
+            <p class = "review-text">Lola Meowez, the secretary at Financial Horizon, ensures a seamless and trustworthy experience in feline finance excellence</p>
           </div>
         </div>
         <div id = "reviews-container-slideshow-slide-3" class = "slideshow-slide review pad-10">
          <img class = "review-photo" src ="img/jumpingCat.jpg" alt = "Charlie Murrimate">
           <div class="review-info">
             <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/jumpingCat.jpg')">Charlie Murrimate</a></h3>
-            <p class = "review-text">3. Some Some Some Some Some Some Some Some Some Some Some words</p>
+            <p class = "review-text">Felix Kibbler's tailored approach and consistent returns make his investment advice the cat's meow in financial expertise</p>
           </div>
         </div>
         <div id = "reviews-container-slideshow-slide-4" class = "slideshow-slide review pad-10">
           <img class = "review-photo" src = "img/huh.jpg" alt = "Grace Kittycliff">
           <div class="review-info">
             <h3 class = "review-name"><a class = "extra-info" onclick="openExtraInfo('img/huh.jpg')">Grace Kittycliff</a></h3>
-            <p class = "review-text">4. Some Some Some Some Some Some Some Some Some Some Some words</p>
+            <p class = "review-text">Maximus Plushiev and Financial Horizon have provided a whisker-friendly investing experience, tailoring my portfolio to match my goals</p>
           </div>
         </div>
         <a class="slideshow-button-prev" data-containerid = "reviews-container" onclick="plusSlides(this, -1)">&#10094;</a>
@@ -219,33 +223,33 @@
     <section id = "help">
       <h2 class = "section-header pad-10 font-size-30">Help</h2>
       <div class = "section-container display-flex align-items-center justify-content-space-between pad-20 w-100 text-align-center" id = "help-container">
-        <div id = "faq">
+        <div id = "faq" class = "margin-10">
           <div class = "faq-question">
-            <h3>1. Question</h3>
-            <p>Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text</p>
+            <h3>How can I start investing with a small budget?</h3>
+            <p>Begin by exploring low-cost investment options like index funds or consider micro-investing apps. Gradually increase your contributions as your budget allows.</p>
           </div>
           <div class = "faq-question">
-            <h3>2. Question</h3>
-            <p>Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text</p>
+            <h3>What factors should I consider before choosing an investment portfolio?</h3>
+            <p>Consider your financial goals, risk tolerance, and time horizon. Diversify your portfolio across different asset classes to spread risk and align with your objectives.</p>
           </div>
           <div class = "faq-question">
-            <h3>3. Question</h3>
-            Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long text
+            <h3>How does market volatility affect my investments?</h3>
+            <p>Market volatility can lead to fluctuations in the value of investments. It's essential to stay informed, diversify your portfolio, and focus on long-term goals to weather short-term market swings.</p>
           </div>
         </div>
         <form id = "online-consultation" onsubmit="formAction()">
           <h3>You can sign up for an online consultation</h3>
           <p>
             <label for="consultation-date">Choose date: </label>
-            <input type="date" id="consultation-date" oninput="makeAvaibleTimeOptions(this)" required>
+            <input type="date" id="consultation-date" class = "border-radius-5px" oninput="makeAvaibleTimeOptions(this)" required>
           </p>
           <p>
             <label for="consultation-time">Choose avaible time: </label>
-            <select id="consultation-time"></select>
+            <select id="consultation-time" class = "border-radius-5px"></select>
           </p>
           <p>
             <label for="consultation-email">Your contact e-mail: </label>
-            <input type="email" id = "consultation-email" placeholder = "example@email.com" pattern="[a-z0-9_%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+            <input type="email" id = "consultation-email" class = "border-radius-5px" placeholder = "example@email.com" pattern="[a-z0-9_%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
           </p>
           <button id = "online-consultation-button" class="pad-10 border-radius-5px">Make an entry</button>
           <script src="cosultationControl.js"></script>

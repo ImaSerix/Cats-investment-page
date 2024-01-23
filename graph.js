@@ -1,3 +1,5 @@
+//Made by:Imants Zvīdris (iz23053)
+
 class Graph{
     #chart = 0;
     constructor(){

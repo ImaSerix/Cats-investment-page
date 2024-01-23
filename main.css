@@ -1,3 +1,5 @@
+/*--Made by:Imants Zvīdris (iz23053)*/
+
 /*-----Overall options-----*/
 /*---Fonts---*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
@@ -228,6 +230,12 @@ header{
   a.dropdown-opened{
     color:var(--color-text);
   }
+  .dropdown:not(.dropdown-opened){
+    display: none !important;
+  }
+  .dropdown.dropdown-opened{
+    display: block;
+  }
   #top-nav{
     font-size: 15px;
     padding: 0;
@@ -242,6 +250,9 @@ header{
     width: 100%;
     text-align: center;
     padding:5px;
+  }
+  .navigation-item a:hover{
+    cursor: pointer;
   }
   .navigation-item:not(:last-child){
     border-right: 0;
@@ -651,6 +662,9 @@ input::-webkit-inner-spin-button {
 #calculator-options-button:hover{
   background-color: var(--color-button-hovered);
 }
+.not-valide{
+  color: red;
+}
 /*Calculator------*/
 /*-----Contacts-----*/
 
@@ -682,11 +696,6 @@ input::-webkit-inner-spin-button {
 /*Contacts-----*/
 
 /*-----Help-----*/
-#help{
-  max-width: 1200px;
-  max-height: 700px;
-}
-
 #faq{
   text-align: left;
   flex-grow: 2;
@@ -707,8 +716,11 @@ input::-webkit-inner-spin-button {
 }
 #online-consultation-button:hover{
   background-color: var(--color-button-hovered);
-
 }
+.faq-question p{
+  text-indent: 10px;
+}
+
 @media screen and (max-width:600px) {
   #help-container{
     flex-direction: column;

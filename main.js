@@ -1,3 +1,5 @@
+//Made by:Imants Zvīdris (iz23053)
+
 let menuOpen = false;
 let dropdownOpen = false;
 function tabChanger(elem, tabName){
@@ -26,13 +28,22 @@ function openMenu (){
     navMenu.classList.remove("navigation-opened");
   }
 }
+function closeMenu(){
+  const navButton = document.getElementById("navigation-menu-button");
+  const navMenu = document.getElementById("navigation");
+  if (menuOpen) {
+    navButton.src = "img/menu.png";
+    navMenu.classList.remove("navigation-opened");
+  }
+  menuOpen = !menuOpen;
+}
 function openDropdown(elem){
   const dropdown = elem.parentElement.getElementsByClassName("dropdown")[0];
   dropdownOpen = !dropdownOpen;
   if (dropdownOpen) elem.parentElement.getElementsByTagName("a")[0].classList.add("dropdown-opened");
   else elem.parentElement.getElementsByTagName("a")[0].classList.remove("dropdown-opened");
-  if (dropdownOpen) dropdown.style.display = "block";
-  else dropdown.style.display = "none";
+  if (dropdownOpen) dropdown.classList.add("dropdown-opened");
+  else dropdown.classList.remove("dropdown-opened");
 }
 function openExtraInfo(image){
   const extraInfo = document.getElementById("extra-info-container");
@@ -46,4 +57,8 @@ function closeExtraInfo (){
 }
 function alertUseless(){
   alert("This button is useless, but it could do something useful");
+}
+function scroolToSection (sectionId){
+  if (innerWidth > 600) window.scrollTo(0, document.getElementById(sectionId).offsetTop-150);
+  else window.scrollTo(0, document.getElementById(sectionId).offsetTop-55);
 }
