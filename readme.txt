@@ -1,0 +1,1 @@
+Just a study project in Html, CSS and JS. 
